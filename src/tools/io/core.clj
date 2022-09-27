@@ -118,6 +118,16 @@
   "Returns `true` if filename exists"
   get-file-type)
 
+(defmulti zip-directory
+  "Zip current directory"
+  get-file-type)
+
+(defmulti unzip-directory
+  "Unzip file, if zipped otherwise yield
+   `nil`"
+  get-file-type)
+
+
 
 ;;Shamefully copied from clojure.java.io/do-copy because we hardly can reuse the do-copy multi-fn
 (defn copy
